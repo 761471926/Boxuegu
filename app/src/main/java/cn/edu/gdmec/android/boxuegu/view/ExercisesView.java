@@ -26,6 +26,7 @@ public class ExercisesView {
 
     public ExercisesView(Activity context) {
         mContext = context;
+        //为之后将layout转化为view时用
         mInflater = LayoutInflater.from(mContext);
     }
     private void createView(){
