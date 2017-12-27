@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            //
+            //课程的点击事件
             case R.id.bottom_bar_course_btn:
                 clearBottomImageState();
                 selectDisplayView(0);
