@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 clearBottomImageState();
                 selectDisplayView(1);
                 break;
-            //
+            //我的点击事件
             case R.id.bottom_bar_myinfo_btn:
                 clearBottomImageState();
                 selectDisplayView(2);
