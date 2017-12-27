@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-    //
+    //设置界面view的初始化状态
     private void setInitStatus() {
         clearBottomImageState();
         setSelectedStatus(0);
