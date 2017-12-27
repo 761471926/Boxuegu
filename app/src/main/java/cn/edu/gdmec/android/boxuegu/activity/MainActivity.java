@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 rl_title_bar.setVisibility(View.GONE);
         }
     }
-    //
+    //移除不需要的视图
     private void removeAllView(){
         for (int i = 0;i < mBodyLayout.getChildCount(); i++) {
             mBodyLayout.getChildAt(i).setVisibility(View.GONE);
