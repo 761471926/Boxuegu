@@ -166,9 +166,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private void createView(int viewIndex) {
         switch (viewIndex) {
             case 0:
+                //课程界面
                 break;
             case 1:
-                //
+                //习题界面
                 if (mExercisesView == null) {
                     mExercisesView = new ExercisesView(this);
                     mBodyLayout.addView(mExercisesView.getView());
@@ -178,6 +179,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mExercisesView.showView();
                 break;
             case 2:
+                //我的界面
                 break;
         }
     }
