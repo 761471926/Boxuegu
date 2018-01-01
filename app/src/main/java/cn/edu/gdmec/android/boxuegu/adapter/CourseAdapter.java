@@ -22,7 +22,7 @@ import cn.edu.gdmec.android.boxuegu.bean.CourseBean;
 public class CourseAdapter extends BaseAdapter {
     private Context mContext;
     private List<List<CourseBean>> cbl;
-    private CourseAdapter(Context context){
+    public CourseAdapter(Context context){
         this.mContext = context;
     }
     public void setData(List<List<CourseBean>> cbl){
