@@ -20,7 +20,7 @@ public class SQLiteHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS" + U_USERINFO +"("
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + U_USERINFO +"("
                 + "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + "userName VARCHAR, "
                 + "nickName VARCHAR, "
@@ -28,7 +28,7 @@ public class SQLiteHelper extends SQLiteOpenHelper{
                 + "signature VARCHAR"
                 + ")");
 
-        db.execSQL("CREATE TABLE IF NOT EXISTS" + U_VIDEO_PLAY_LIST +"("
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + U_VIDEO_PLAY_LIST +"("
                 + "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + "userName VARCHAR, "
                 + "chapterId INT, "

@@ -77,7 +77,7 @@ public class CourseAdapter extends BaseAdapter {
                             public void onClick(View v) {
                                 Intent intent = new Intent(mContext,
                                         VideoListActivity.class);
-                                intent.putExtra("is",bean.id);
+                                intent.putExtra("id",bean.id);
                                 intent.putExtra("intro",bean.intro);
                                 mContext.startActivity(intent);
                             }
@@ -92,7 +92,7 @@ public class CourseAdapter extends BaseAdapter {
                             public void onClick(View v) {
                                 Intent intent = new Intent(mContext,
                                         VideoListActivity.class);
-                                intent.putExtra("is",bean.id);
+                                intent.putExtra("id",bean.id);
                                 intent.putExtra("intro",bean.intro);
                                 mContext.startActivity(intent);
                             }
