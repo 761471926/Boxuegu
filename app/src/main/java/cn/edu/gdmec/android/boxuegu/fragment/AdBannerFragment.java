@@ -63,8 +63,8 @@ public class AdBannerFragment extends Fragment {
         iv = new ImageView(getActivity());
         ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT);
-        iv.setLayoutParams(lp);
-        iv.setScaleType(ImageView.ScaleType.FIT_XY);
+        iv.setLayoutParams(lp);//设置图片宽高参数
+        iv.setScaleType(ImageView.ScaleType.FIT_XY);//把图片塞满整个控件
         return iv;
     }
 }
