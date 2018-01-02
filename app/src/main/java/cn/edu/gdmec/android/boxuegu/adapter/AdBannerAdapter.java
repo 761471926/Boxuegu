@@ -45,7 +45,6 @@ public class AdBannerAdapter extends FragmentStatePagerAdapter implements OnTouc
             args.putString("ad",cadl.get(index % cadl.size()).icon);
         return AdBannerFragment.newInstance(args);
     }
-
     @Override
     public int getCount() {
         return Integer.MAX_VALUE;
