@@ -15,7 +15,7 @@ import cn.edu.gdmec.android.boxuegu.R;
 
 public class AdBannerFragment extends Fragment {
     private String ab;//广告
-    private ImageView iv;
+    private ImageView iv;//图片
     public static AdBannerFragment newInstance(Bundle args){
         AdBannerFragment af = new AdBannerFragment();
         af.setArguments(args);
