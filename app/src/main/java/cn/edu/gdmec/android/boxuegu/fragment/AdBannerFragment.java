@@ -26,7 +26,7 @@ public class AdBannerFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle arg = getArguments();
-        ab = arg.getString("ad");
+        ab = arg.getString("ad");//获取广告图片名称
     }
 
     @Override
