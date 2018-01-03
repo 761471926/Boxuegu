@@ -2,6 +2,7 @@ package cn.edu.gdmec.android.boxuegu.activity;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -30,6 +31,8 @@ public class ChangeUserInfoActivity extends AppCompatActivity{
     private int flag;
     private EditText et_content;
     private ImageView iv_delete;
+    private Bitmap iv_head_icon;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +69,7 @@ public class ChangeUserInfoActivity extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 et_content.setText("");
+                iv_delete.setImageBitmap(iv_head_icon);
             }
         });
         tv_save.setOnClickListener(new View.OnClickListener() {
@@ -96,6 +100,8 @@ public class ChangeUserInfoActivity extends AppCompatActivity{
 
                         }
                         break;
+                    case 3:
+
 
                 }
             }

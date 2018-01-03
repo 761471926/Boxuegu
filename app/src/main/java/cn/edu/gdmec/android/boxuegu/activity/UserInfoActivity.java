@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,6 +38,8 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     private TextView tv_signature;
     private static final int CHANGE_NICKNAME = 1;
     private static final int CHANGE_SIGNATURE = 2;
+    private static final int CHANGE_PHOTO = 3;
+    private ImageView iv_head_icon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +58,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
         tv_main_title.setText("个人资料");
         rl_title_bar = (RelativeLayout) findViewById(R.id.title_bar);
         rl_title_bar.setBackgroundColor(Color.parseColor("#30B4FF"));
+        iv_head_icon = (ImageView) findViewById(R.id.iv_head_icon);
         rl_nickName = (RelativeLayout) findViewById(R.id.rl_nickName);
         rl_sex = (RelativeLayout) findViewById(R.id.rl_sex);
         rl_signature = (RelativeLayout) findViewById(R.id.rl_signature);
@@ -98,8 +102,12 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.tv_back:
-                this.finish();
+               this.finish();
                 break;
+            case R.id.iv_head_icon:
+                Bundle bdPhoto = new Bundle();
+                bdPhoto.putInt("flag",3);
+                enterActivityForResult(ChangeUserInfoActivity.class,CHANGE_PHOTO,bdPhoto);
             case R.id.rl_nickName:
                 String name = tv_nickName.getText().toString();
                 Bundle bdName = new Bundle();
