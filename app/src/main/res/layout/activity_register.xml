@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:id="@+id/activity_register"
     android:background="@drawable/register_bg"
-    tools:context="cn.edu.gdmec.android.testboxuegu.activity.RegisterActivity">
+    tools:context="cn.edu.gdmec.android.boxuegu.activity.RegisterActivity">
 
     <include layout="@layout/main_title_bar"/>
     <ImageView
@@ -65,7 +65,7 @@
         android:textColor="#000000"
         android:textSize="14sp"/>
     <Button
-        android:text="注册"
+        android:text="注 册"
         android:id="@+id/btn_register"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"

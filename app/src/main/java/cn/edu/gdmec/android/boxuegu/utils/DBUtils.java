@@ -79,10 +79,10 @@ public class DBUtils {
         db.insert(SQLiteHelper.U_VIDEO_PLAY_LIST,null,cv);
     }
 
-    public boolean hasVideoPlay(int chapterId,int videoId,String useName){
+    public boolean hasVideoPlay(int chapterId,int videoId,String userName){
         boolean hasVideo = false;
-        String sql= "SELECT * FROM " + SQLiteHelper.U_VIDEO_PLAY_LIST + " WHERE chapterI=? AND videoId=? AND userName=?";
-        Cursor cursor = db.rawQuery(sql,new String[] {chapterId + "",videoId + "",useName});
+        String sql= "SELECT * FROM " + SQLiteHelper.U_VIDEO_PLAY_LIST + " WHERE chapterId=? AND videoId=? AND userName=?";
+        Cursor cursor = db.rawQuery(sql,new String[] {chapterId + "",videoId + "",userName});
         if (cursor.moveToFirst()){
             hasVideo = true;
         }
@@ -90,11 +90,11 @@ public class DBUtils {
         return hasVideo;
     }
 
-    public boolean delVideoPlay(int chapterId,int videoId,String useName){
+    public boolean delVideoPlay(int chapterId,int videoId,String userName){
         boolean delSuccess = false;
         int row = db.delete(SQLiteHelper.U_VIDEO_PLAY_LIST,
                 "chapterId=? AND videoId=? AND userName=?",new String[]{ chapterId + "",
-                        videoId + "",useName});
+                        videoId + "",userName});
         if (row>0){
             delSuccess=true;
         }
