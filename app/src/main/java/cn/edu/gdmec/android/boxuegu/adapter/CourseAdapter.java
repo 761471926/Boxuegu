@@ -2,16 +2,19 @@ package cn.edu.gdmec.android.boxuegu.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
 import cn.edu.gdmec.android.boxuegu.R;
+import cn.edu.gdmec.android.boxuegu.activity.LoginActivity;
 import cn.edu.gdmec.android.boxuegu.activity.VideoListActivity;
 import cn.edu.gdmec.android.boxuegu.bean.CourseBean;
 
@@ -28,6 +31,11 @@ public class CourseAdapter extends BaseAdapter {
     public void setData(List<List<CourseBean>> cbl){
         this.cbl = cbl;
         notifyDataSetChanged();
+    }
+    private boolean isLogin(){
+        SharedPreferences sp = mContext.getSharedPreferences("loginInfo",Context.MODE_PRIVATE);
+        boolean isLogin = sp.getBoolean("isLogin",false);
+        return isLogin;
     }
     @Override
     public int getCount() {
@@ -62,6 +70,7 @@ public class CourseAdapter extends BaseAdapter {
         }else{
             vh = (ViewHolder) convertView.getTag();
         }
+
         final List<CourseBean> list = getItem(position);
         if (list!=null){
             for (int i= 0;i<list.size();i++){
@@ -75,11 +84,17 @@ public class CourseAdapter extends BaseAdapter {
                         vh.iv_left_img.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Intent intent = new Intent(mContext,
-                                        VideoListActivity.class);
-                                intent.putExtra("id",bean.id);
-                                intent.putExtra("intro",bean.intro);
-                                mContext.startActivity(intent);
+                                if(isLogin()) {
+                                    Intent intent = new Intent(mContext,
+                                            VideoListActivity.class);
+                                    intent.putExtra("id", bean.id);
+                                    intent.putExtra("intro", bean.intro);
+                                    mContext.startActivity(intent);
+                                }else{
+                                    Toast.makeText(mContext,"您还未登录，请先登录",Toast.LENGTH_SHORT).show();
+                                    Intent intent1 = new Intent(mContext, LoginActivity.class);
+                                    mContext.startActivity(intent1);
+                                }
                             }
                         });
                         break;
@@ -90,11 +105,17 @@ public class CourseAdapter extends BaseAdapter {
                         vh.iv_right_img.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                Intent intent = new Intent(mContext,
-                                        VideoListActivity.class);
-                                intent.putExtra("id",bean.id);
-                                intent.putExtra("intro",bean.intro);
-                                mContext.startActivity(intent);
+                                if(isLogin()) {
+                                    Intent intent = new Intent(mContext,
+                                            VideoListActivity.class);
+                                    intent.putExtra("id",bean.id);
+                                    intent.putExtra("intro",bean.intro);
+                                    mContext.startActivity(intent);
+                                }else{
+                                    Toast.makeText(mContext,"您还未登录，请先登录",Toast.LENGTH_SHORT).show();
+                                    Intent intent1 = new Intent(mContext, LoginActivity.class);
+                                    mContext.startActivity(intent1);
+                                }
                             }
                         });
                         break;

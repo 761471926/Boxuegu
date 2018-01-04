@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
@@ -69,7 +70,6 @@ public class ChangeUserInfoActivity extends AppCompatActivity{
             @Override
             public void onClick(View view) {
                 et_content.setText("");
-                iv_delete.setImageBitmap(iv_head_icon);
             }
         });
         tv_save.setOnClickListener(new View.OnClickListener() {
@@ -85,7 +85,8 @@ public class ChangeUserInfoActivity extends AppCompatActivity{
                             Toast.makeText(ChangeUserInfoActivity.this,"保存成功",Toast.LENGTH_SHORT).show();
                             ChangeUserInfoActivity.this.finish();
                         }else{
-                            Toast.makeText(ChangeUserInfoActivity.this,"昵称不能为空",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ChangeUserInfoActivity.this,"昵称" +
+                                    "不能为空",Toast.LENGTH_SHORT).show();
 
                         }
                         break;
@@ -101,7 +102,11 @@ public class ChangeUserInfoActivity extends AppCompatActivity{
                         }
                         break;
                     case 3:
-
+                        Intent intent1 = new Intent(Intent.ACTION_PICK, null);//返回被选中项的URI
+                        intent1.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");//得到所有图片的URI
+//                System.out.println("MediaStore.Images.Media.EXTERNAL_CONTENT_URI  ------------>   "
+//                        + MediaStore.Images.Media.EXTERNAL_CONTENT_URI);//   content://media/external/images/media
+                        startActivityForResult(intent1,3);
 
                 }
             }
